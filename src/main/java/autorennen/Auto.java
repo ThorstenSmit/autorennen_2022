@@ -10,9 +10,12 @@ public class Auto {
     private void fahren(){}
     public int getGeschwindigkeit() {
         return geschwindigkeit;}
-    public void beschleunigen(){}
-    public void bremsen(){}
-    public void weiterfahren(){}
+    public void beschleunigen(){
+    }
+    public void bremsen(){
+    }
+    public void weiterFahren(){
+    }
     public Tank getTank() {
         return tank;
     }
