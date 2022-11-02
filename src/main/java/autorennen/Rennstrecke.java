@@ -1,4 +1,4 @@
-package Projekt_Autorennen;
+package autorennen;
 
 public class Rennstrecke {
     private Auto autoLinks;
