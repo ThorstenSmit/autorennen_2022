@@ -1,5 +1,4 @@
 package autorennen;
-
 public class SpielCtrl {
 
     private boolean aktuellerSpieler;
