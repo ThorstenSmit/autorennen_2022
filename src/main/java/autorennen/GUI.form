@@ -157,31 +157,49 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="weiter"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="weiterButtonLinksActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="weiterButtonRechts">
       <Properties>
         <Property name="text" type="java.lang.String" value="weiter"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="weiterButtonRechtsActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="beschleunigenButtonLinks">
       <Properties>
         <Property name="text" type="java.lang.String" value="beschleunigen"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="beschleunigenButtonLinksActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="beschleunigenButtonRechts">
       <Properties>
         <Property name="text" type="java.lang.String" value="beschleunigen"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="beschleunigenButtonRechtsActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="bremsenButtonLinks">
       <Properties>
         <Property name="text" type="java.lang.String" value="bremsen"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bremsenButtonLinksActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="bremsenButtonRechts">
       <Properties>
         <Property name="text" type="java.lang.String" value="bremsen"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bremsenButtonRechtsActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldTankangabeRechts">
       <Events>
@@ -189,6 +207,12 @@
       </Events>
     </Component>
     <Component class="javax.swing.JProgressBar" name="jProgressBarTankRechts">
+      <Events>
+        <EventHandler event="ancestorAdded" listener="javax.swing.event.AncestorListener" parameters="javax.swing.event.AncestorEvent" handler="jProgressBarTankRechtsAncestorAdded"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JProgressBar()"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabelTankRechts">
       <Properties>
