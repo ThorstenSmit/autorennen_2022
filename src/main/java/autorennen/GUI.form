@@ -211,7 +211,7 @@
         <EventHandler event="ancestorAdded" listener="javax.swing.event.AncestorListener" parameters="javax.swing.event.AncestorEvent" handler="jProgressBarTankRechtsAncestorAdded"/>
       </Events>
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JProgressBar()"/>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JProgressBar(0, spielCtrl.getRennstrecke().getAutoRechts().getTank().getTankstandMaximal())"/>
       </AuxValues>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabelTankRechts">
@@ -242,6 +242,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JProgressBar" name="jProgressBarTankLinks">
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JProgressBar(0, spielCtrl.getRennstrecke().getAutoLinks().getTank().getTankstandMaximal())"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldNameLinks">
       <Events>
