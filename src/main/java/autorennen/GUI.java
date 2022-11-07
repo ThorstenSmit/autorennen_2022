@@ -22,6 +22,10 @@ public class GUI extends javax.swing.JFrame {
     public void setSpielCtrl(SpielCtrl spielCtrl) {
         this.spielCtrl = spielCtrl;
     }
+
+    public SpielCtrl getSpielCtrl() {
+        return spielCtrl;
+    }
     
     private void aktualisieren(){
         this.removeAll();
@@ -47,14 +51,14 @@ public class GUI extends javax.swing.JFrame {
         bremsenButtonLinks = new javax.swing.JButton();
         bremsenButtonRechts = new javax.swing.JButton();
         jTextFieldTankangabeRechts = new javax.swing.JTextField();
-        jProgressBarTankRechts = new javax.swing.JProgressBar(0, spielCtrl.getRennstrecke().getAutoRechts().getTank().getTankstandMaximal());
+        jProgressBarTankRechts = new javax.swing.JProgressBar(0, this.getSpielCtrl().getRennstrecke().getAutoRechts().getTank().getTankstandMaximal());
         jLabelTankRechts = new javax.swing.JLabel();
         jLabelKMHRechts = new javax.swing.JLabel();
         jTextFieldNameRechts = new javax.swing.JTextField();
         jTextFieldTankangabeLinks = new javax.swing.JTextField();
         jLabelKMHLinks = new javax.swing.JLabel();
         jLabelTankLinks = new javax.swing.JLabel();
-        jProgressBarTankLinks = new javax.swing.JProgressBar(0, spielCtrl.getRennstrecke().getAutoLinks().getTank().getTankstandMaximal());
+        jProgressBarTankLinks = new javax.swing.JProgressBar(0, this.getSpielCtrl().getRennstrecke().getAutoLinks().getTank().getTankstandMaximal());
         jTextFieldNameLinks = new javax.swing.JTextField();
         jTextFieldWetterlage = new javax.swing.JTextField();
         jProgressBar1 = new javax.swing.JProgressBar();
@@ -113,7 +117,7 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
-        jProgressBarTankRechts.setValue(spielCtrl.getRennstrecke().getAutoRechts().getTank().getTankstand());
+        jProgressBarTankRechts.setValue(this.getSpielCtrl().getRennstrecke().getAutoRechts().getTank().getTankstand());
         jProgressBarTankRechts.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 jProgressBarTankRechtsAncestorAdded(evt);
@@ -138,7 +142,7 @@ public class GUI extends javax.swing.JFrame {
 
         jLabelTankLinks.setText("Tank");
 
-        jProgressBarTankLinks.setValue(spielCtrl.getRennstrecke().getAutoLinks().getTank().getTankstand());
+        jProgressBarTankLinks.setValue(this.getSpielCtrl().getRennstrecke().getAutoLinks().getTank().getTankstand());
 
         jTextFieldNameLinks.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
