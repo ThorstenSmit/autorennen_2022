@@ -14,15 +14,12 @@ public class GUI extends javax.swing.JFrame {
     /**
      * Creates new form GUI
      */
-    public GUI() {
-        initComponents();
-    }
-    private SpielCtrl spielCtrl;
-
-    public void setSpielCtrl(SpielCtrl spielCtrl) {
+    public GUI(SpielCtrl spielCtrl) {
         this.spielCtrl = spielCtrl;
+        initComponents();
         System.out.println("Lol: "+this.autoRechts.getAlignmentY());
     }
+    private SpielCtrl spielCtrl;
     
 
     /**
