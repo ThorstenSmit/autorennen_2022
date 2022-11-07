@@ -18,13 +18,10 @@ public class GUI extends javax.swing.JFrame {
         initComponents();
     }
     private SpielCtrl spielCtrl;
-    
-    public GUI (SpielCtrl spielCrtl){
-        
-    }
 
     public void setSpielCtrl(SpielCtrl spielCtrl) {
         this.spielCtrl = spielCtrl;
+        System.out.println("Lol: "+this.autoRechts.getAlignmentY());
     }
     
 
@@ -45,19 +42,17 @@ public class GUI extends javax.swing.JFrame {
         beschleunigenButtonRechts = new javax.swing.JButton();
         bremsenButtonLinks = new javax.swing.JButton();
         bremsenButtonRechts = new javax.swing.JButton();
+        jTextFieldTankangabeRechts = new javax.swing.JTextField();
         jProgressBarTankRechts = new javax.swing.JProgressBar(0, spielCtrl.getRennstrecke().getAutoRechts().getTank().getTankstandMaximal());
         jLabelTankRechts = new javax.swing.JLabel();
         jLabelKMHRechts = new javax.swing.JLabel();
         jTextFieldNameRechts = new javax.swing.JTextField();
+        jTextFieldTankangabeLinks = new javax.swing.JTextField();
         jLabelKMHLinks = new javax.swing.JLabel();
         jLabelTankLinks = new javax.swing.JLabel();
         jProgressBarTankLinks = new javax.swing.JProgressBar(0, spielCtrl.getRennstrecke().getAutoLinks().getTank().getTankstandMaximal());
         jTextFieldNameLinks = new javax.swing.JTextField();
-        jLabelWetterlage = new javax.swing.JLabel();
-        jLabelGeschwindigkeitLinks = new javax.swing.JLabel();
-        jLabelGeschwindigkeitRechts = new javax.swing.JLabel();
-        autoLinks = new javax.swing.JLabel();
-        autoRechts = new javax.swing.JLabel();
+        jTextFieldWetterlage = new javax.swing.JTextField();
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -107,6 +102,12 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
+        jTextFieldTankangabeRechts.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldTankangabeRechtsActionPerformed(evt);
+            }
+        });
+
         jProgressBarTankRechts.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 jProgressBarTankRechtsAncestorAdded(evt);
@@ -120,6 +121,12 @@ public class GUI extends javax.swing.JFrame {
         jLabelTankRechts.setText("Tank");
 
         jLabelKMHRechts.setText("km / h");
+
+        jTextFieldTankangabeLinks.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldTankangabeLinksActionPerformed(evt);
+            }
+        });
 
         jLabelKMHLinks.setText("km / h");
 
@@ -252,6 +259,34 @@ public class GUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldTankangabeRechtsActionPerformed
 
+    private void weiterButtonLinksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_weiterButtonLinksActionPerformed
+        spielCtrl.knopfLinksWeiterFahren();
+    }//GEN-LAST:event_weiterButtonLinksActionPerformed
+
+    private void beschleunigenButtonLinksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_beschleunigenButtonLinksActionPerformed
+        spielCtrl.knopfLinksBeschleunigen();
+    }//GEN-LAST:event_beschleunigenButtonLinksActionPerformed
+
+    private void bremsenButtonLinksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bremsenButtonLinksActionPerformed
+        spielCtrl.knopfLinksBremsen();
+    }//GEN-LAST:event_bremsenButtonLinksActionPerformed
+
+    private void weiterButtonRechtsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_weiterButtonRechtsActionPerformed
+        spielCtrl.knopfRechtsWeiterFahren();
+    }//GEN-LAST:event_weiterButtonRechtsActionPerformed
+
+    private void beschleunigenButtonRechtsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_beschleunigenButtonRechtsActionPerformed
+        spielCtrl.knopfRechtsBeschleunigen();
+    }//GEN-LAST:event_beschleunigenButtonRechtsActionPerformed
+
+    private void bremsenButtonRechtsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bremsenButtonRechtsActionPerformed
+        spielCtrl.knopfRechtsBremsen();
+    }//GEN-LAST:event_bremsenButtonRechtsActionPerformed
+
+    private void jProgressBarTankRechtsAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jProgressBarTankRechtsAncestorAdded
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jProgressBarTankRechtsAncestorAdded
+
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -274,6 +309,9 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextFieldNameLinks;
     private javax.swing.JTextField jTextFieldNameRechts;
+    private javax.swing.JTextField jTextFieldTankangabeLinks;
+    private javax.swing.JTextField jTextFieldTankangabeRechts;
+    private javax.swing.JTextField jTextFieldWetterlage;
     private javax.swing.JButton weiterButtonLinks;
     private javax.swing.JButton weiterButtonRechts;
     // End of variables declaration//GEN-END:variables
