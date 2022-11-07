@@ -2,11 +2,16 @@ package autorennen;
 public class Auto {
     private String fahrerName;
     private Tank tank;
+    private String name;
     private int geschwindigkeit;
     private int maxGeschwindigkeit = 150;
     private int geschwindigkeitsSchritt = 15;
 
-    public Auto(String name){}
+    public Auto(String name, Tank tank){
+        this.name = name;
+        this.tank = tank;
+    }
+    
     private void fahren(){
         if (this.getTank().getTankstand()==0){
             System.out.println("Nicht genug Tank!");

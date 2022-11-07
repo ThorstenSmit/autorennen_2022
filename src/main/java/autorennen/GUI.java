@@ -18,10 +18,6 @@ public class GUI extends javax.swing.JFrame {
         initComponents();
     }
     private SpielCtrl spielCtrl;
-    
-    public GUI (SpielCtrl spielCrtl){
-        
-    }
 
     public void setSpielCtrl(SpielCtrl spielCtrl) {
         this.spielCtrl = spielCtrl;
