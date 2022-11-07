@@ -23,6 +23,11 @@ public class GUI extends javax.swing.JFrame {
         this.spielCtrl = spielCtrl;
     }
     
+    private void aktualisieren(){
+        this.removeAll();
+        this.revalidate();
+        this.repaint();
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -108,6 +113,7 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
+        jProgressBarTankRechts.setValue(spielCtrl.getRennstrecke().getAutoRechts().getTank().getTankstand());
         jProgressBarTankRechts.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 jProgressBarTankRechtsAncestorAdded(evt);
@@ -131,6 +137,8 @@ public class GUI extends javax.swing.JFrame {
         jLabelKMHLinks.setText("km / h");
 
         jLabelTankLinks.setText("Tank");
+
+        jProgressBarTankLinks.setValue(spielCtrl.getRennstrecke().getAutoLinks().getTank().getTankstand());
 
         jTextFieldNameLinks.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
