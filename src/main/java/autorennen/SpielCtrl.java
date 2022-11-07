@@ -8,6 +8,10 @@ public class SpielCtrl {
         this.rennstrecke = rennstrecke;
     }
 
+    public Rennstrecke getRennstrecke() {
+        return rennstrecke;
+    }
+    
     public void knopfLinksWeiterFahren() {
         this.rennstrecke.getAutoLinks().weiterFahren();
     }
