@@ -9,4 +9,8 @@ public class Tank {
     }
     public void tankVerbrauch(int geschwindigkeit){  
     }
+
+    public int getTankstandMaximal() {
+        return tankstandMaximal;
+    }
 }

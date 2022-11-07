@@ -46,14 +46,14 @@ public class GUI extends javax.swing.JFrame {
         bremsenButtonLinks = new javax.swing.JButton();
         bremsenButtonRechts = new javax.swing.JButton();
         jTextFieldTankangabeRechts = new javax.swing.JTextField();
-        jProgressBarTankRechts = new javax.swing.JProgressBar();
+        jProgressBarTankRechts = new javax.swing.JProgressBar(0, spielCtrl.getRennstrecke().getAutoRechts().getTank().getTankstandMaximal());
         jLabelTankRechts = new javax.swing.JLabel();
         jLabelKMHRechts = new javax.swing.JLabel();
         jTextFieldNameRechts = new javax.swing.JTextField();
         jTextFieldTankangabeLinks = new javax.swing.JTextField();
         jLabelKMHLinks = new javax.swing.JLabel();
         jLabelTankLinks = new javax.swing.JLabel();
-        jProgressBarTankLinks = new javax.swing.JProgressBar();
+        jProgressBarTankLinks = new javax.swing.JProgressBar(0, spielCtrl.getRennstrecke().getAutoLinks().getTank().getTankstandMaximal());
         jTextFieldNameLinks = new javax.swing.JTextField();
         jTextFieldWetterlage = new javax.swing.JTextField();
         jProgressBar1 = new javax.swing.JProgressBar();
