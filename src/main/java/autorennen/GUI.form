@@ -212,6 +212,7 @@
       </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JProgressBar(0, spielCtrl.getRennstrecke().getAutoRechts().getTank().getTankstandMaximal())"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="jProgressBarTankRechts.setValue(spielCtrl.getRennstrecke().getAutoRechts().getTank().getTankstand());"/>
       </AuxValues>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabelTankRechts">
@@ -244,6 +245,7 @@
     <Component class="javax.swing.JProgressBar" name="jProgressBarTankLinks">
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JProgressBar(0, spielCtrl.getRennstrecke().getAutoLinks().getTank().getTankstandMaximal())"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="jProgressBarTankLinks.setValue(spielCtrl.getRennstrecke().getAutoLinks().getTank().getTankstand());"/>
       </AuxValues>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldNameLinks">
