@@ -18,6 +18,10 @@ public class GUI extends javax.swing.JFrame {
         initComponents();
     }
     private SpielCtrl spielCtrl;
+    
+    public GUI (SpielCtrl spielCrtl){
+        
+    }
 
     public void setSpielCtrl(SpielCtrl spielCtrl) {
         this.spielCtrl = spielCtrl;
@@ -61,60 +65,20 @@ public class GUI extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         weiterButtonLinks.setText("weiter");
-        weiterButtonLinks.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                weiterButtonLinksActionPerformed(evt);
-            }
-        });
 
         weiterButtonRechts.setText("weiter");
-        weiterButtonRechts.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                weiterButtonRechtsActionPerformed(evt);
-            }
-        });
 
         beschleunigenButtonLinks.setText("beschleunigen");
-        beschleunigenButtonLinks.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                beschleunigenButtonLinksActionPerformed(evt);
-            }
-        });
 
         beschleunigenButtonRechts.setText("beschleunigen");
-        beschleunigenButtonRechts.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                beschleunigenButtonRechtsActionPerformed(evt);
-            }
-        });
 
         bremsenButtonLinks.setText("bremsen");
-        bremsenButtonLinks.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bremsenButtonLinksActionPerformed(evt);
-            }
-        });
 
         bremsenButtonRechts.setText("bremsen");
-        bremsenButtonRechts.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bremsenButtonRechtsActionPerformed(evt);
-            }
-        });
 
         jTextFieldTankangabeRechts.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldTankangabeRechtsActionPerformed(evt);
-            }
-        });
-
-        jProgressBarTankRechts.addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
-                jProgressBarTankRechtsAncestorAdded(evt);
-            }
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-            }
-            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
             }
         });
 
@@ -243,34 +207,6 @@ public class GUI extends javax.swing.JFrame {
     private void jTextFieldTankangabeRechtsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldTankangabeRechtsActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldTankangabeRechtsActionPerformed
-
-    private void weiterButtonLinksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_weiterButtonLinksActionPerformed
-        spielCtrl.knopfLinksWeiterFahren();
-    }//GEN-LAST:event_weiterButtonLinksActionPerformed
-
-    private void beschleunigenButtonLinksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_beschleunigenButtonLinksActionPerformed
-        spielCtrl.knopfLinksBeschleunigen();
-    }//GEN-LAST:event_beschleunigenButtonLinksActionPerformed
-
-    private void bremsenButtonLinksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bremsenButtonLinksActionPerformed
-        spielCtrl.knopfLinksBremsen();
-    }//GEN-LAST:event_bremsenButtonLinksActionPerformed
-
-    private void weiterButtonRechtsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_weiterButtonRechtsActionPerformed
-        spielCtrl.knopfRechtsWeiterFahren();
-    }//GEN-LAST:event_weiterButtonRechtsActionPerformed
-
-    private void beschleunigenButtonRechtsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_beschleunigenButtonRechtsActionPerformed
-        spielCtrl.knopfRechtsBeschleunigen();
-    }//GEN-LAST:event_beschleunigenButtonRechtsActionPerformed
-
-    private void bremsenButtonRechtsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bremsenButtonRechtsActionPerformed
-        spielCtrl.knopfRechtsBremsen();
-    }//GEN-LAST:event_bremsenButtonRechtsActionPerformed
-
-    private void jProgressBarTankRechtsAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jProgressBarTankRechtsAncestorAdded
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jProgressBarTankRechtsAncestorAdded
 
 
 

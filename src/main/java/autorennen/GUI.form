@@ -43,26 +43,23 @@
           <Group type="102" attributes="0">
               <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Component id="jTextFieldTankangabeLinks" min="-2" pref="60" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jLabelKMHLinks" min="-2" pref="34" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jTextFieldWetterlage" min="-2" pref="133" max="-2" attributes="0"/>
-                          <Component id="jProgressBar1" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                      <Component id="beschleunigenButtonLinks" min="-2" max="-2" attributes="0"/>
+                      <Component id="weiterButtonLinks" min="-2" pref="103" max="-2" attributes="0"/>
+                      <Component id="bremsenButtonLinks" alignment="1" min="-2" pref="103" max="-2" attributes="0"/>
                   </Group>
                   <Component id="jTextFieldNameLinks" alignment="0" min="-2" pref="104" max="-2" attributes="0"/>
                   <Component id="jProgressBarTankLinks" min="-2" pref="132" max="-2" attributes="0"/>
                   <Component id="jLabelTankLinks" min="-2" pref="34" max="-2" attributes="0"/>
-                  <Group type="102" alignment="1" attributes="0">
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="beschleunigenButtonLinks" min="-2" max="-2" attributes="0"/>
-                          <Component id="weiterButtonLinks" min="-2" pref="103" max="-2" attributes="0"/>
-                          <Component id="bremsenButtonLinks" alignment="1" min="-2" pref="103" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="jLabelGeschwindigkeitLinks" min="-2" pref="60" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jLabelKMHLinks" min="-2" pref="34" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="jLabelWetterlage" max="32767" attributes="0"/>
+                          <Component id="jProgressBar1" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="218" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace pref="20" max="32767" attributes="0"/>
@@ -73,19 +70,16 @@
                               <Component id="beschleunigenButtonRechts" min="-2" max="-2" attributes="0"/>
                               <Component id="weiterButtonRechts" min="-2" pref="103" max="-2" attributes="0"/>
                               <Component id="bremsenButtonRechts" alignment="0" min="-2" pref="103" max="-2" attributes="0"/>
-                              <Component id="jTextFieldTankangabeRechts" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                       </Group>
                       <Group type="103" alignment="1" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-                              <Component id="jLabelTankRechts" min="-2" pref="34" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="95" max="-2" attributes="0"/>
+                              <Component id="jLabelGeschwindigkeitRechts" min="-2" pref="75" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="jLabelKMHRechts" min="-2" pref="34" max="-2" attributes="0"/>
                           </Group>
+                          <Component id="jLabelTankRechts" min="-2" pref="34" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
@@ -104,7 +98,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jTextFieldWetterlage" max="32767" attributes="0"/>
+              <Component id="jLabelWetterlage" pref="23" max="32767" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Group type="102" attributes="0">
@@ -124,12 +118,12 @@
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jTextFieldTankangabeLinks" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabelKMHLinks" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextFieldTankangabeRechts" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabelKMHRechts" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelGeschwindigkeitLinks" alignment="1" max="32767" attributes="0"/>
+                          <Component id="jLabelGeschwindigkeitRechts" alignment="1" min="-2" pref="14" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="weiterButtonLinks" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="weiterButtonRechts" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -201,11 +195,6 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bremsenButtonRechtsActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextFieldTankangabeRechts">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldTankangabeRechtsActionPerformed"/>
-      </Events>
-    </Component>
     <Component class="javax.swing.JProgressBar" name="jProgressBarTankRechts">
       <Events>
         <EventHandler event="ancestorAdded" listener="javax.swing.event.AncestorListener" parameters="javax.swing.event.AncestorEvent" handler="jProgressBarTankRechtsAncestorAdded"/>
@@ -226,11 +215,6 @@
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldNameRechts">
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextFieldTankangabeLinks">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldTankangabeLinksActionPerformed"/>
-      </Events>
-    </Component>
     <Component class="javax.swing.JLabel" name="jLabelKMHLinks">
       <Properties>
         <Property name="text" type="java.lang.String" value="km / h"/>
@@ -248,12 +232,13 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldNameLinksActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextFieldWetterlage">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Wetterlage"/>
-      </Properties>
-    </Component>
     <Component class="javax.swing.JProgressBar" name="jProgressBar1">
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelWetterlage">
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelGeschwindigkeitLinks">
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelGeschwindigkeitRechts">
     </Component>
   </SubComponents>
 </Form>
