@@ -287,19 +287,19 @@ public class GUI extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel autoLinks;
-    private javax.swing.JLabel autoRechts;
+    private javax.swing.JLabel autoLinks = new javax.swing.JLabel();;
+    private javax.swing.JLabel autoRechts = new javax.swing.JLabel();;
     private javax.swing.JButton beschleunigenButtonLinks;
     private javax.swing.JButton beschleunigenButtonRechts;
     private javax.swing.JButton bremsenButtonLinks;
     private javax.swing.JButton bremsenButtonRechts;
-    private javax.swing.JLabel jLabelGeschwindigkeitLinks;
-    private javax.swing.JLabel jLabelGeschwindigkeitRechts;
+    private javax.swing.JLabel jLabelGeschwindigkeitLinks = new javax.swing.JLabel();;
+    private javax.swing.JLabel jLabelGeschwindigkeitRechts = new javax.swing.JLabel();;
     private javax.swing.JLabel jLabelKMHLinks;
     private javax.swing.JLabel jLabelKMHRechts;
     private javax.swing.JLabel jLabelTankLinks;
     private javax.swing.JLabel jLabelTankRechts;
-    private javax.swing.JLabel jLabelWetterlage;
+    private javax.swing.JLabel jLabelWetterlage = new javax.swing.JLabel();;
     private javax.swing.JProgressBar jProgressBarTankLinks;
     private javax.swing.JProgressBar jProgressBarTankRechts;
     private javax.swing.JScrollPane jScrollPane1;
