@@ -14,24 +14,13 @@ public class GUI extends javax.swing.JFrame {
     /**
      * Creates new form GUI
      */
-    public GUI() {
+    public GUI(SpielCtrl spielCtrl) {
+        this.spielCtrl = spielCtrl;
         initComponents();
+        System.out.println("Lol: "+this.autoRechts.getAlignmentY());
     }
     private SpielCtrl spielCtrl;
-
-    public void setSpielCtrl(SpielCtrl spielCtrl) {
-        this.spielCtrl = spielCtrl;
-    }
-
-    public SpielCtrl getSpielCtrl() {
-        return spielCtrl;
-    }
     
-    private void aktualisieren(){
-        this.removeAll();
-        this.revalidate();
-        this.repaint();
-    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -51,17 +40,16 @@ public class GUI extends javax.swing.JFrame {
         bremsenButtonLinks = new javax.swing.JButton();
         bremsenButtonRechts = new javax.swing.JButton();
         jTextFieldTankangabeRechts = new javax.swing.JTextField();
-        jProgressBarTankRechts = new javax.swing.JProgressBar(0, this.getSpielCtrl().getRennstrecke().getAutoRechts().getTank().getTankstandMaximal());
+        jProgressBarTankRechts = new javax.swing.JProgressBar(0, spielCtrl.getRennstrecke().getAutoRechts().getTank().getTankstandMaximal());
         jLabelTankRechts = new javax.swing.JLabel();
         jLabelKMHRechts = new javax.swing.JLabel();
         jTextFieldNameRechts = new javax.swing.JTextField();
         jTextFieldTankangabeLinks = new javax.swing.JTextField();
         jLabelKMHLinks = new javax.swing.JLabel();
         jLabelTankLinks = new javax.swing.JLabel();
-        jProgressBarTankLinks = new javax.swing.JProgressBar(0, this.getSpielCtrl().getRennstrecke().getAutoLinks().getTank().getTankstandMaximal());
+        jProgressBarTankLinks = new javax.swing.JProgressBar(0, spielCtrl.getRennstrecke().getAutoLinks().getTank().getTankstandMaximal());
         jTextFieldNameLinks = new javax.swing.JTextField();
         jTextFieldWetterlage = new javax.swing.JTextField();
-        jProgressBar1 = new javax.swing.JProgressBar();
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -117,7 +105,6 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
-        jProgressBarTankRechts.setValue(this.getSpielCtrl().getRennstrecke().getAutoRechts().getTank().getTankstand());
         jProgressBarTankRechts.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 jProgressBarTankRechtsAncestorAdded(evt);
@@ -142,15 +129,27 @@ public class GUI extends javax.swing.JFrame {
 
         jLabelTankLinks.setText("Tank");
 
-        jProgressBarTankLinks.setValue(this.getSpielCtrl().getRennstrecke().getAutoLinks().getTank().getTankstand());
-
         jTextFieldNameLinks.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldNameLinksActionPerformed(evt);
             }
         });
 
-        jTextFieldWetterlage.setText("Wetterlage");
+        autoLinks.setForeground(new java.awt.Color(64, 64, 64));
+        autoLinks.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        autoLinks.setIcon(new javax.swing.ImageIcon(getClass().getResource("/autorennen/ressources/Auto1.png"))); // NOI18N
+        autoLinks.setMaximumSize(new java.awt.Dimension(64, 64));
+        autoLinks.setMinimumSize(new java.awt.Dimension(64, 64));
+        autoLinks.setName(""); // NOI18N
+        autoLinks.setPreferredSize(new java.awt.Dimension(64, 64));
+
+        autoRechts.setForeground(new java.awt.Color(64, 64, 64));
+        autoRechts.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        autoRechts.setIcon(new javax.swing.ImageIcon(getClass().getResource("/autorennen/ressources/Auto2.png"))); // NOI18N
+        autoRechts.setMaximumSize(new java.awt.Dimension(64, 64));
+        autoRechts.setMinimumSize(new java.awt.Dimension(64, 64));
+        autoRechts.setName(""); // NOI18N
+        autoRechts.setPreferredSize(new java.awt.Dimension(64, 64));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -160,53 +159,52 @@ public class GUI extends javax.swing.JFrame {
                 .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jTextFieldTankangabeLinks, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabelKMHLinks, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(72, 72, 72)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextFieldWetterlage, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jTextFieldNameLinks, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jProgressBarTankLinks, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelTankLinks, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(beschleunigenButtonLinks)
                             .addComponent(weiterButtonLinks, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(bremsenButtonLinks, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(218, 218, 218)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
+                        .addGap(157, 157, 157)
+                        .addComponent(autoLinks, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(autoRechts, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextFieldNameLinks, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jProgressBarTankLinks, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelTankLinks, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabelGeschwindigkeitLinks, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabelKMHLinks, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(72, 72, 72)
+                        .addComponent(jLabelWetterlage, javax.swing.GroupLayout.PREFERRED_SIZE, 428, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(beschleunigenButtonRechts)
                                 .addComponent(weiterButtonRechts, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(bremsenButtonRechts, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jTextFieldTankangabeRechts, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(bremsenButtonRechts, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGap(15, 15, 15))
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(jLabelTankRechts, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(95, 95, 95)
-                                .addComponent(jLabelKMHRechts, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(jLabelGeschwindigkeitRechts, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabelKMHRechts, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabelTankRechts, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(10, 10, 10)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jTextFieldNameRechts, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jProgressBarTankRechts, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(0, 17, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTextFieldWetterlage)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addComponent(jLabelWetterlage, javax.swing.GroupLayout.DEFAULT_SIZE, 29, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jTextFieldNameLinks, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -220,12 +218,13 @@ public class GUI extends javax.swing.JFrame {
                             .addComponent(jLabelTankRechts)
                             .addComponent(jLabelTankLinks))
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextFieldTankangabeLinks, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabelKMHLinks)
-                            .addComponent(jTextFieldTankangabeRechts, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabelKMHRechts))
-                        .addGap(62, 62, 62)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabelGeschwindigkeitLinks, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelGeschwindigkeitRechts, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabelKMHLinks)
+                                .addComponent(jLabelKMHRechts)))
+                        .addGap(65, 65, 65)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(weiterButtonLinks)
                             .addComponent(weiterButtonRechts))
@@ -237,7 +236,8 @@ public class GUI extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(bremsenButtonLinks)
                             .addComponent(bremsenButtonRechts)))
-                    .addComponent(jProgressBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(autoLinks, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(autoRechts, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(38, 38, 38))
         );
 
@@ -287,15 +287,19 @@ public class GUI extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel autoLinks = new javax.swing.JLabel();;
+    private javax.swing.JLabel autoRechts = new javax.swing.JLabel();;
     private javax.swing.JButton beschleunigenButtonLinks;
     private javax.swing.JButton beschleunigenButtonRechts;
     private javax.swing.JButton bremsenButtonLinks;
     private javax.swing.JButton bremsenButtonRechts;
+    private javax.swing.JLabel jLabelGeschwindigkeitLinks = new javax.swing.JLabel();;
+    private javax.swing.JLabel jLabelGeschwindigkeitRechts = new javax.swing.JLabel();;
     private javax.swing.JLabel jLabelKMHLinks;
     private javax.swing.JLabel jLabelKMHRechts;
     private javax.swing.JLabel jLabelTankLinks;
     private javax.swing.JLabel jLabelTankRechts;
-    private javax.swing.JProgressBar jProgressBar1;
+    private javax.swing.JLabel jLabelWetterlage = new javax.swing.JLabel();;
     private javax.swing.JProgressBar jProgressBarTankLinks;
     private javax.swing.JProgressBar jProgressBarTankRechts;
     private javax.swing.JScrollPane jScrollPane1;
