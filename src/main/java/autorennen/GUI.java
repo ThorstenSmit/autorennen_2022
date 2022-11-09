@@ -28,9 +28,6 @@ public class GUI extends javax.swing.JFrame {
         this.jProgressBarTankLinks.setValue(spielCtrl.getRennstrecke().getAutoLinks().getTank().getTankstand());
         this.jLabelGeschwindigkeitLinks.setText(Integer.toString(this.spielCtrl.getRennstrecke().getAutoLinks().getGeschwindigkeit()));
         this.jLabelGeschwindigkeitRechts.setText(Integer.toString(this.spielCtrl.getRennstrecke().getAutoRechts().getGeschwindigkeit()));
-        this.removeAll();
-        this.revalidate();
-        this.repaint();
     }
 
     /**
