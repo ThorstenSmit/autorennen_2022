@@ -5,6 +5,8 @@
  */
 package autorennen;
 
+import javax.swing.*;
+
 /**
  *
  * @author Leon
@@ -137,7 +139,7 @@ public class GUI extends javax.swing.JFrame {
 
         autoLinks.setForeground(new java.awt.Color(64, 64, 64));
         autoLinks.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        autoLinks.setIcon(new javax.swing.ImageIcon(getClass().getResource("/autorennen/ressources/Auto1.png"))); // NOI18N
+        autoLinks.setIcon(new javax.swing.ImageIcon("src/main/java/autorennen/ressources/Auto1.png")); // NOI18N
         autoLinks.setMaximumSize(new java.awt.Dimension(64, 64));
         autoLinks.setMinimumSize(new java.awt.Dimension(64, 64));
         autoLinks.setName(""); // NOI18N
@@ -145,7 +147,7 @@ public class GUI extends javax.swing.JFrame {
 
         autoRechts.setForeground(new java.awt.Color(64, 64, 64));
         autoRechts.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        autoRechts.setIcon(new javax.swing.ImageIcon(getClass().getResource("/autorennen/ressources/Auto2.png"))); // NOI18N
+        autoRechts.setIcon(new javax.swing.ImageIcon("src/main/java/autorennen/ressources/Auto2.png")); // NOI18N
         autoRechts.setMaximumSize(new java.awt.Dimension(64, 64));
         autoRechts.setMinimumSize(new java.awt.Dimension(64, 64));
         autoRechts.setName(""); // NOI18N
