@@ -1,4 +1,5 @@
 package autorennen;
+
 public class SpielCtrl {
 
     private boolean aktuellerSpieler = false;
@@ -7,52 +8,67 @@ public class SpielCtrl {
     public SpielCtrl(Rennstrecke rennstrecke) {
         this.rennstrecke = rennstrecke;
     }
-    private void changeSpieler(){
+
+    private void changeSpieler() {
         this.aktuellerSpieler = !this.aktuellerSpieler;
+    }
+
+    private void autoLinksBewegung() {
+        this.rennstrecke.setAutoLinksPos(this.rennstrecke.getAutoLinksPos() + this.rennstrecke.getAutoLinks().getGeschwindigkeit());
+    }
+
+    private void autoRechtsBewegung() {
+        this.rennstrecke.setAutoRechtsPos(this.rennstrecke.getAutoRechtsPos() + this.rennstrecke.getAutoRechts().getGeschwindigkeit());
     }
 
     public Rennstrecke getRennstrecke() {
         return rennstrecke;
     }
-    
+
     public void knopfLinksWeiterFahren() {
-        if(aktuellerSpieler && !hatSpielerGewonnen()){
+        if (aktuellerSpieler && !hatSpielerGewonnen()) {
             this.rennstrecke.getAutoLinks().weiterFahren();
+            autoLinksBewegung();
             changeSpieler();
         }
     }
 
     public void knopfLinksBeschleunigen() {
-        if(aktuellerSpieler && !hatSpielerGewonnen()) {
+        if (aktuellerSpieler && !hatSpielerGewonnen()) {
             this.rennstrecke.getAutoLinks().beschleunigen();
+            autoLinksBewegung();
             changeSpieler();
         }
     }
 
     public void knopfLinksBremsen() {
-        if(aktuellerSpieler && !hatSpielerGewonnen()) {
+        if (aktuellerSpieler && !hatSpielerGewonnen()) {
             this.rennstrecke.getAutoLinks().bremsen();
+            autoLinksBewegung();
             changeSpieler();
         }
     }
 
     public void knopfRechtsWeiterFahren() {
-        if(!aktuellerSpieler && !hatSpielerGewonnen()) {
+        if (!aktuellerSpieler && !hatSpielerGewonnen()) {
             this.rennstrecke.getAutoRechts().weiterFahren();
+            autoRechtsBewegung();
             changeSpieler();
         }
     }
 
     public void knopfRechtsBeschleunigen() {
-        if(!aktuellerSpieler && !hatSpielerGewonnen()) {
+        if (!aktuellerSpieler && !hatSpielerGewonnen()) {
             this.rennstrecke.getAutoRechts().beschleunigen();
+            autoRechtsBewegung();
             changeSpieler();
         }
     }
 
     public void knopfRechtsBremsen() {
-        if(!aktuellerSpieler && !hatSpielerGewonnen()) {
+        if (!aktuellerSpieler && !hatSpielerGewonnen()) {
             this.rennstrecke.getAutoRechts().bremsen();
+            autoRechtsBewegung();
             changeSpieler();
         }
     }
