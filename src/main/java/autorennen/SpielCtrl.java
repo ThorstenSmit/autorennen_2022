@@ -1,11 +1,14 @@
 package autorennen;
 public class SpielCtrl {
 
-    private boolean aktuellerSpieler;
-    private Rennstrecke rennstrecke;
+    private boolean aktuellerSpieler = false;
+    private final Rennstrecke rennstrecke;
 
     public SpielCtrl(Rennstrecke rennstrecke) {
         this.rennstrecke = rennstrecke;
+    }
+    private void changeSpieler(){
+        this.aktuellerSpieler = !this.aktuellerSpieler;
     }
 
     public Rennstrecke getRennstrecke() {
@@ -13,31 +16,49 @@ public class SpielCtrl {
     }
     
     public void knopfLinksWeiterFahren() {
-        this.rennstrecke.getAutoLinks().weiterFahren();
+        if(aktuellerSpieler && !hatSpielerGewonnen()){
+            this.rennstrecke.getAutoLinks().weiterFahren();
+            changeSpieler();
+        }
     }
 
     public void knopfLinksBeschleunigen() {
-        this.rennstrecke.getAutoLinks().beschleunigen();
+        if(aktuellerSpieler && !hatSpielerGewonnen()) {
+            this.rennstrecke.getAutoLinks().beschleunigen();
+            changeSpieler();
+        }
     }
 
     public void knopfLinksBremsen() {
-        this.rennstrecke.getAutoLinks().bremsen();
+        if(aktuellerSpieler && !hatSpielerGewonnen()) {
+            this.rennstrecke.getAutoLinks().bremsen();
+            changeSpieler();
+        }
     }
 
     public void knopfRechtsWeiterFahren() {
-        this.rennstrecke.getAutoRechts().weiterFahren();
+        if(!aktuellerSpieler && !hatSpielerGewonnen()) {
+            this.rennstrecke.getAutoRechts().weiterFahren();
+            changeSpieler();
+        }
     }
 
     public void knopfRechtsBeschleunigen() {
-        this.rennstrecke.getAutoRechts().beschleunigen();
+        if(!aktuellerSpieler && !hatSpielerGewonnen()) {
+            this.rennstrecke.getAutoRechts().beschleunigen();
+            changeSpieler();
+        }
     }
 
     public void knopfRechtsBremsen() {
-        this.rennstrecke.getAutoRechts().bremsen();
+        if(!aktuellerSpieler && !hatSpielerGewonnen()) {
+            this.rennstrecke.getAutoRechts().bremsen();
+            changeSpieler();
+        }
     }
 
     public boolean hatSpielerGewonnen() {
-        return !this.aktuellerSpieler
+        return this.aktuellerSpieler
                 ? this.rennstrecke.getAutoLinksPos() >= 500
                 : this.rennstrecke.getAutoRechtsPos() >= 500;
     }
