@@ -18,16 +18,25 @@ public class GUI extends javax.swing.JFrame {
     public GUI(SpielCtrl spielCtrl) {
         this.spielCtrl = spielCtrl;
         initComponents();
-        System.out.println("Lol: " + this.autoRechts.getAlignmentY());
     }
 
+    private SpielCtrl getSpielCtrl() {
+        return this.spielCtrl;
+    }
     private SpielCtrl spielCtrl;
+    private static int startPos = 281;
 
     private void aktualisieren() {
         this.jProgressBarTankRechts.setValue(spielCtrl.getRennstrecke().getAutoRechts().getTank().getTankstand());
         this.jProgressBarTankLinks.setValue(spielCtrl.getRennstrecke().getAutoLinks().getTank().getTankstand());
         this.jLabelGeschwindigkeitLinks.setText(Integer.toString(this.spielCtrl.getRennstrecke().getAutoLinks().getGeschwindigkeit()));
         this.jLabelGeschwindigkeitRechts.setText(Integer.toString(this.spielCtrl.getRennstrecke().getAutoRechts().getGeschwindigkeit()));
+        int xPosL = this.autoLinks.getX();
+        int xPosR = this.autoRechts.getX();
+        int yPosR = startPos - this.getSpielCtrl().getRennstrecke().getAutoRechtsPos() / 2;
+        this.autoRechts.setLocation(xPosR, yPosR);
+        int yPosL = startPos - this.getSpielCtrl().getRennstrecke().getAutoLinksPos() / 2;
+        this.autoLinks.setLocation(xPosL, yPosL);
     }
 
     /**
