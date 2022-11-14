@@ -34,9 +34,11 @@ public class Auto {
     public void bremsen(){
         int bremse = this.geschwindigkeit-this.geschwindigkeitsSchritt;
     }
+    
     public void weiterFahren(){
-        int faehrtweiter = this.geschwindigkeit*this.geschwindigkeitsSchritt;
+        this.fahren();
     }
+    
     public Tank getTank() {
         return tank;
     }
