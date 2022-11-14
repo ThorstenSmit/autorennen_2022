@@ -23,6 +23,7 @@ public class GUI extends javax.swing.JFrame {
     private SpielCtrl getSpielCtrl() {
         return this.spielCtrl;
     }
+
     private SpielCtrl spielCtrl;
     private static int startPos = 281;
 
@@ -34,9 +35,9 @@ public class GUI extends javax.swing.JFrame {
         int xPosL = this.autoLinks.getX();
         int xPosR = this.autoRechts.getX();
         int yPosR = startPos - this.getSpielCtrl().getRennstrecke().getAutoRechtsPos() / 2;
-        this.autoRechts.setLocation(xPosR, yPosR);
+        this.autoRechts.setLocation(xPosR, (int) yPosR);
         int yPosL = startPos - this.getSpielCtrl().getRennstrecke().getAutoLinksPos() / 2;
-        this.autoLinks.setLocation(xPosL, yPosL);
+        this.autoLinks.setLocation(xPosL, (int) yPosL);
     }
 
     /**
