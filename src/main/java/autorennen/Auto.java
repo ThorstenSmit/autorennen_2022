@@ -4,6 +4,7 @@ public class Auto {
     private Tank tank;
     private String name;
     private int geschwindigkeit;
+    private boolean kannFahren;
     private int maxGeschwindigkeit = 150;
     private int geschwindigkeitsSchritt = 15;
 
@@ -15,13 +16,19 @@ public class Auto {
     private void fahren(boolean istEsAmRegnen){
         if (this.getTank().getTankstand()==0){
             System.out.println("Nicht genug Tank!");
+            this.kannFahren = false;
         } else {
             this.getTank().tankVerbrauch(this.geschwindigkeit, istEsAmRegnen);
+            this.kannFahren = true;
         }
     }
     
     public int getGeschwindigkeit(){
         return geschwindigkeit;
+    }
+
+    public boolean isKannFahren() {
+        return kannFahren;
     }
     
     public void beschleunigen(boolean istEsAmRegnen){

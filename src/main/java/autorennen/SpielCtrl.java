@@ -14,11 +14,15 @@ public class SpielCtrl {
     }
 
     private void autoLinksBewegung() {
-        this.rennstrecke.setAutoLinksPos(this.rennstrecke.getAutoLinksPos() + this.rennstrecke.getAutoLinks().getGeschwindigkeit());
+        if (this.rennstrecke.getAutoLinks().isKannFahren()) {
+            this.rennstrecke.setAutoLinksPos(this.getRennstrecke().getAutoLinksPos() + this.rennstrecke.getAutoLinks().getGeschwindigkeit());
+        }
     }
 
     private void autoRechtsBewegung() {
-        this.rennstrecke.setAutoRechtsPos(this.rennstrecke.getAutoRechtsPos() + this.rennstrecke.getAutoRechts().getGeschwindigkeit());
+        if (this.getRennstrecke().getAutoRechts().isKannFahren()) {
+            this.rennstrecke.setAutoRechtsPos(this.rennstrecke.getAutoRechtsPos() + this.rennstrecke.getAutoRechts().getGeschwindigkeit());
+        }
     }
 
     public Rennstrecke getRennstrecke() {
