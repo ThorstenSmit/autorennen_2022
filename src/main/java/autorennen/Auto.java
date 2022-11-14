@@ -15,8 +15,8 @@ public class Auto {
     private void fahren(){
         if (this.getTank().getTankstand()==0){
             System.out.println("Nicht genug Tank!");
-        }else {
-            int faehrt = this.geschwindigkeit*this.geschwindigkeitsSchritt;
+        } else {
+            this.getTank().tankVerbrauch(this.geschwindigkeit);
         }
     }
     
