@@ -25,14 +25,19 @@ public class Auto {
     }
     
     public void beschleunigen(){
-        int beschleunigt = this.geschwindigkeit*this.geschwindigkeitsSchritt;
-        if (this.maxGeschwindigkeit == this.geschwindigkeit){
-            int maxGeschwindigkeit1 = this.maxGeschwindigkeit;
+        this.geschwindigkeit += this.geschwindigkeitsSchritt;
+        if (this.geschwindigkeit >= this.maxGeschwindigkeit){
+            this.geschwindigkeit = this.maxGeschwindigkeit;
         }
+        this.fahren();
     }
         
     public void bremsen(){
-        int bremse = this.geschwindigkeit-this.geschwindigkeitsSchritt;
+        this.geschwindigkeit -= this.geschwindigkeitsSchritt;
+        if (this.geschwindigkeit <= 0){
+            this.geschwindigkeit = 0;
+        }
+        this.fahren();
     }
     
     public void weiterFahren(){
