@@ -18,6 +18,7 @@ public class SpielCtrl {
     public void knopfLinksWeiterFahren() {
         if(aktuellerSpieler && !hatSpielerGewonnen()){
             this.rennstrecke.getAutoLinks().weiterFahren();
+            this.rennstrecke.setAutoLinksPos(this.rennstrecke.getAutoLinksPos()+this.rennstrecke.getAutoLinks().getGeschwindigkeit());
             changeSpieler();
         }
     }

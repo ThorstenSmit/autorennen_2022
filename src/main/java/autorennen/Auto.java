@@ -3,7 +3,7 @@ public class Auto {
     private String fahrerName;
     private Tank tank;
     private String name;
-    private int geschwindigkeit;
+    private int geschwindigkeit = 15;
     private int maxGeschwindigkeit = 150;
     private int geschwindigkeitsSchritt = 15;
 
