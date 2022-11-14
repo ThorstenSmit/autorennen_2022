@@ -12,11 +12,11 @@ public class Auto {
         this.tank = tank;
     }
     
-    private void fahren(){
+    private void fahren(boolean istEsAmRegnen){
         if (this.getTank().getTankstand()==0){
             System.out.println("Nicht genug Tank!");
         } else {
-            this.getTank().tankVerbrauch(this.geschwindigkeit);
+            this.getTank().tankVerbrauch(this.geschwindigkeit, istEsAmRegnen);
         }
     }
     
@@ -24,24 +24,24 @@ public class Auto {
         return geschwindigkeit;
     }
     
-    public void beschleunigen(){
+    public void beschleunigen(boolean istEsAmRegnen){
         this.geschwindigkeit += this.geschwindigkeitsSchritt;
         if (this.geschwindigkeit >= this.maxGeschwindigkeit){
             this.geschwindigkeit = this.maxGeschwindigkeit;
         }
-        this.fahren();
+        this.fahren(istEsAmRegnen);
     }
         
-    public void bremsen(){
+    public void bremsen(boolean istEsAmRegnen){
         this.geschwindigkeit -= this.geschwindigkeitsSchritt;
         if (this.geschwindigkeit <= 0){
             this.geschwindigkeit = 0;
         }
-        this.fahren();
+        this.fahren(istEsAmRegnen);
     }
     
-    public void weiterFahren(){
-        this.fahren();
+    public void weiterFahren(boolean istEsAmRegnen){
+        this.fahren(istEsAmRegnen);
     }
     
     public Tank getTank() {

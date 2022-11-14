@@ -1,15 +1,21 @@
 package autorennen;
+
 public class Tank {
-    private int tankstand;
-    private int tankstandMaximal = 100;
-    private int genormterVerbrauch  = 5;
+    private final int tankstandMaximal = 100;
+    private int tankstand = tankstandMaximal;
+    private final int genormterVerbrauch = 5;
+    private final double verbrauchsFaktor = 0.6;
 
     public int getTankstand() {
         return tankstand;
     }
-    
-    public void tankVerbrauch(int geschwindigkeit){  
-        int verbrauch = this.tankstand-this.genormterVerbrauch*geschwindigkeit;    
+
+    public void tankVerbrauch(int geschwindigkeit, boolean istEsAmRegnen) {
+        if (istEsAmRegnen) {
+            this.tankstand -= (int) (this.genormterVerbrauch * geschwindigkeit * 2 * verbrauchsFaktor);
+        } else {
+            this.tankstand -= (int) (this.genormterVerbrauch * geschwindigkeit * verbrauchsFaktor);
+        }
     }
 
     public int getTankstandMaximal() {

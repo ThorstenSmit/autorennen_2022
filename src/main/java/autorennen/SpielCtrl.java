@@ -27,7 +27,7 @@ public class SpielCtrl {
 
     public void knopfLinksWeiterFahren() {
         if (aktuellerSpieler && !hatSpielerGewonnen()) {
-            this.rennstrecke.getAutoLinks().weiterFahren();
+            this.rennstrecke.getAutoLinks().weiterFahren(this.rennstrecke.getWetter().getIstEsAmRegnen());
             autoLinksBewegung();
             changeSpieler();
         }
@@ -35,7 +35,7 @@ public class SpielCtrl {
 
     public void knopfLinksBeschleunigen() {
         if (aktuellerSpieler && !hatSpielerGewonnen()) {
-            this.rennstrecke.getAutoLinks().beschleunigen();
+            this.rennstrecke.getAutoLinks().beschleunigen(this.rennstrecke.getWetter().getIstEsAmRegnen());
             autoLinksBewegung();
             changeSpieler();
         }
@@ -43,7 +43,7 @@ public class SpielCtrl {
 
     public void knopfLinksBremsen() {
         if (aktuellerSpieler && !hatSpielerGewonnen()) {
-            this.rennstrecke.getAutoLinks().bremsen();
+            this.rennstrecke.getAutoLinks().bremsen(this.rennstrecke.getWetter().getIstEsAmRegnen());
             autoLinksBewegung();
             changeSpieler();
         }
@@ -51,7 +51,7 @@ public class SpielCtrl {
 
     public void knopfRechtsWeiterFahren() {
         if (!aktuellerSpieler && !hatSpielerGewonnen()) {
-            this.rennstrecke.getAutoRechts().weiterFahren();
+            this.rennstrecke.getAutoRechts().weiterFahren(this.rennstrecke.getWetter().getIstEsAmRegnen());
             autoRechtsBewegung();
             changeSpieler();
         }
@@ -59,7 +59,7 @@ public class SpielCtrl {
 
     public void knopfRechtsBeschleunigen() {
         if (!aktuellerSpieler && !hatSpielerGewonnen()) {
-            this.rennstrecke.getAutoRechts().beschleunigen();
+            this.rennstrecke.getAutoRechts().beschleunigen(this.rennstrecke.getWetter().getIstEsAmRegnen());
             autoRechtsBewegung();
             changeSpieler();
         }
@@ -67,7 +67,7 @@ public class SpielCtrl {
 
     public void knopfRechtsBremsen() {
         if (!aktuellerSpieler && !hatSpielerGewonnen()) {
-            this.rennstrecke.getAutoRechts().bremsen();
+            this.rennstrecke.getAutoRechts().bremsen(this.rennstrecke.getWetter().getIstEsAmRegnen());
             autoRechtsBewegung();
             changeSpieler();
         }
