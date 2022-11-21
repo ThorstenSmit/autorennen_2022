@@ -35,9 +35,9 @@ public class GUI extends javax.swing.JFrame {
         int xPosL = this.autoLinks.getX();
         int xPosR = this.autoRechts.getX();
         int yPosR = startPos - this.getSpielCtrl().getRennstrecke().getAutoRechtsPos() / 2;
-        this.autoRechts.setLocation(xPosR, (int) yPosR);
+        this.autoRechts.setLocation(xPosR, yPosR);
         int yPosL = startPos - this.getSpielCtrl().getRennstrecke().getAutoLinksPos() / 2;
-        this.autoLinks.setLocation(xPosL, (int) yPosL);
+        this.autoLinks.setLocation(xPosL, yPosL);
         this.jLabelWetter.setText((this.spielCtrl.getRennstrecke().getWetter().isIstEsAmRegnen() ? "Regen" : "Sonnig"));
     }
 
@@ -157,13 +157,13 @@ public class GUI extends javax.swing.JFrame {
 
         autoLinks.setForeground(new java.awt.Color(64, 64, 64));
         autoLinks.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        autoLinks.setIcon(new javax.swing.ImageIcon(getClass().getResource("/autorennen/ressources/Auto1.png"))); // NOI18N
+        autoLinks.setIcon(new javax.swing.ImageIcon("src/main/java/autorennen/ressources/Auto1.png")); // NOI18N
         autoLinks.setName(""); // NOI18N
         autoLinks.setPreferredSize(new java.awt.Dimension(64, 64));
 
         autoRechts.setForeground(new java.awt.Color(64, 64, 64));
         autoRechts.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        autoRechts.setIcon(new javax.swing.ImageIcon(getClass().getResource("/autorennen/ressources/Auto2.png"))); // NOI18N
+        autoRechts.setIcon(new javax.swing.ImageIcon("src/main/java/autorennen/ressources/Auto2.png")); // NOI18N
         autoRechts.setName(""); // NOI18N
         autoRechts.setPreferredSize(new java.awt.Dimension(64, 64));
 
