@@ -299,26 +299,32 @@ public class GUI extends javax.swing.JFrame {
 
     private void weiterButtonLinksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_weiterButtonLinksActionPerformed
         spielCtrl.knopfLinksWeiterFahren();
+        aktualisieren();
     }//GEN-LAST:event_weiterButtonLinksActionPerformed
 
     private void beschleunigenButtonLinksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_beschleunigenButtonLinksActionPerformed
         spielCtrl.knopfLinksBeschleunigen();
+        aktualisieren();
     }//GEN-LAST:event_beschleunigenButtonLinksActionPerformed
 
     private void bremsenButtonLinksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bremsenButtonLinksActionPerformed
         spielCtrl.knopfLinksBremsen();
+        aktualisieren();
     }//GEN-LAST:event_bremsenButtonLinksActionPerformed
 
     private void weiterButtonRechtsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_weiterButtonRechtsActionPerformed
         spielCtrl.knopfRechtsWeiterFahren();
+        aktualisieren();
     }//GEN-LAST:event_weiterButtonRechtsActionPerformed
 
     private void beschleunigenButtonRechtsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_beschleunigenButtonRechtsActionPerformed
         spielCtrl.knopfRechtsBeschleunigen();
+        aktualisieren();
     }//GEN-LAST:event_beschleunigenButtonRechtsActionPerformed
 
     private void bremsenButtonRechtsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bremsenButtonRechtsActionPerformed
         spielCtrl.knopfRechtsBremsen();
+        aktualisieren();
     }//GEN-LAST:event_bremsenButtonRechtsActionPerformed
 
     private void jProgressBarTankRechtsAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jProgressBarTankRechtsAncestorAdded
